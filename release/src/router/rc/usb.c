@@ -144,6 +144,10 @@ void start_usb(void)
 				modprobe("hfsplus");
 			}
 
+			if (nvram_get_int("usb_fs_jfs")) {
+				modprobe("jfs");
+			}
+
 #if defined(LINUX26) && defined(TCONFIG_USB_EXTRAS)
 			if (nvram_get_int("usb_mmc") == 1) {
 				/* insert SD/MMC modules if present */
@@ -224,6 +228,7 @@ void stop_usb(void)
 		modprobe_r("hfs");
 		modprobe_r("hfsplus");
 #endif
+		modprobe_r("jfs");
 		sleep(1);
 #ifdef TCONFIG_SAMBASRV
 		modprobe_r("nls_cp437");

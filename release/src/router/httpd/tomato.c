@@ -1090,6 +1090,7 @@ static const nvset_t nvset_list[] = {
 #endif
 	{ "usb_fs_hfs",			V_01			}, //!Victek
 	{ "usb_fs_hfsplus",		V_01			}, //!Victek
+	{ "usb_fs_jfs",			V_01			},
 	{ "usb_automount",		V_01			},
 	{ "script_usbhotplug", 		V_TEXT(0, 2048)		},
 	{ "script_usbmount", 		V_TEXT(0, 2048)		},

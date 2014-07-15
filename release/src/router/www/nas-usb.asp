@@ -47,7 +47,7 @@ textarea {
 
 <script type='text/javascript'>
 
-//	<% nvram("usb_enable,usb_uhci,usb_ohci,usb_usb2,usb_mmc,usb_storage,usb_printer,usb_printer_bidirect,usb_automount,usb_fs_ext3,usb_fs_fat,usb_fs_ntfs,usb_fs_hfs,usb_fs_hfsplus,script_usbmount,script_usbumount,script_usbhotplug,idle_enable,usb_3g"); %>
+//	<% nvram("usb_enable,usb_uhci,usb_ohci,usb_usb2,usb_mmc,usb_storage,usb_printer,usb_printer_bidirect,usb_automount,usb_fs_ext3,usb_fs_fat,usb_fs_ntfs,usb_fs_hfs,usb_fs_hfsplus,usb_fs_jfs,script_usbmount,script_usbumount,script_usbhotplug,idle_enable,usb_3g"); %>
 
 //	<% usbdevices(); %>
 
@@ -284,6 +284,7 @@ function verifyFields(focused, quiet)
 /* NTFS-END */
 	E('_f_hfs').disabled = b || a; //!Victek
 	E('_f_hfsplus').disabled = b || a; //!Victek
+	E('_f_jfs').disabled = b || a;
 	E('_f_automount').disabled = b || a;
 	E('_f_bprint').disabled = b || !E('_f_print').checked;
 
@@ -326,6 +327,7 @@ function save()
 /* NTFS-END */
 	fom.usb_fs_hfs.value = E('_f_hfs').checked ? 1 : 0; //!Victek
 	fom.usb_fs_hfsplus.value = E('_f_hfsplus').checked ? 1 : 0; //!Victek
+	fom.usb_fs_jfs.value = E('_f_jfs').checked ? 1 : 0;
 	fom.usb_automount.value = E('_f_automount').checked ? 1 : 0;
  /* LINUX26-BEGIN */
 	fom.idle_enable.value = E('_f_idle_enable').checked ? 1 : 0;
@@ -373,6 +375,7 @@ function submit_complete()
 NTFS-END -->
 <input type='hidden' name='usb_fs_hfs'>
 <input type='hidden' name='usb_fs_hfsplus'>
+<input type='hidden' name='usb_fs_jfs'>
 <input type='hidden' name='usb_automount'>
  /* LINUX26-BEGIN */
 <input type='hidden' name='idle_enable'>
@@ -402,7 +405,8 @@ createFieldTable('', [
 /* NTFS-END */
 			{ suffix: '&nbsp; FAT &nbsp;', name: 'f_fat', type: 'checkbox', value: nvram.usb_fs_fat == 1 },
 			{ suffix: '&nbsp; HFS &nbsp;', name: 'f_hfs', type: 'checkbox', value: nvram.usb_fs_hfs == 1 },
-			{ suffix: '&nbsp; HFS+ &nbsp;', name: 'f_hfsplus', type: 'checkbox', value: nvram.usb_fs_hfsplus == 1 }
+			{ suffix: '&nbsp; HFS+ &nbsp;', name: 'f_hfsplus', type: 'checkbox', value: nvram.usb_fs_hfsplus == 1 },
+			{ suffix: '&nbsp; JFS &nbsp;', name: 'f_jfs', type: 'checkbox', value: nvram.usb_fs_jfs == 1 }
 		] },
 /* LINUX26-BEGIN */
 /* EXTRAS-BEGIN */

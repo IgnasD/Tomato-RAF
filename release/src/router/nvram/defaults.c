@@ -714,6 +714,7 @@ const defaults_t defaults[] = {
 #endif
 	{ "usb_fs_hfs",			"1"				}, //!Victek
 	{ "usb_fs_hfsplus",		"1"				}, //!Victek
+	{ "usb_fs_jfs",			"1"				},
 	{ "usb_automount",		"1"				},
 #if 0
 	{ "usb_bdflush",		"30 500 0 0 100 100 60 0 0"	},
