@@ -18,6 +18,7 @@ ln -sf /tmp/share usr/share
 ln -sf /tmp/share usr/local/share
 
 ln -sf tmp/mnt mnt
+ln -sf tmp/mnt media
 ln -sf tmp/var var
 ln -sf tmp/etc etc
 ln -sf tmp/home home
